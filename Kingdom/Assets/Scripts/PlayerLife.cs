@@ -20,7 +20,7 @@ public class PlayerLife : MonoBehaviour
     {
 
     }
-
+    //"Monster"라는 태그 붙은 스프라이트와 충돌하면 life 감소
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Monster"){
             life--;

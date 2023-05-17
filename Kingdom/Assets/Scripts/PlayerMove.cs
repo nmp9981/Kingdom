@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private bool LeftMove, RightMove = false;
     public float speed = 5.0f;
-    bool LeftMove,RightMove = false;
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(LeftMove==true)
+        if (LeftMove)
         {
-            transform.Translate(-1*Time.deltaTime*speed,0,0);
+            transform.Translate(-1 * Time.deltaTime * speed, 0, 0);
         }
-
-        if(RightMove==true)
+        if (RightMove)
         {
-            transform.Translate(1*Time.deltaTime*speed,0,0);
+            transform.Translate(1 * Time.deltaTime * speed, 0, 0);
         }
     }
     public void LeftButtonDown()
@@ -35,11 +27,12 @@ public class PlayerMove : MonoBehaviour
     }
      public void LeftButtonUp()
     {
-        LeftMove = false;
+        LeftMove=false;
     }
     public void RightButtonUp()
     {
-        RightMove = false;
+        RightMove=false;
     }
+    
 
 }
